@@ -6,9 +6,15 @@ import { PrismaModule } from './prisma/prisma.module';
 import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [AuthModule, UserModule, BookmarkModule, PrismaModule, ConfigModule.forRoot({
-    envFilePath: ['.env', '.env.dev'],
-    isGlobal: true,
-  })],
+  imports: [
+    AuthModule,
+    UserModule,
+    BookmarkModule,
+    PrismaModule,
+    ConfigModule.forRoot({
+      envFilePath: ['.env', '.env.dev'],
+      isGlobal: true,
+    }),
+  ],
 })
 export class AppModule {}

@@ -1,7 +1,6 @@
-import { Body, Controller, Post, Req } from '@nestjs/common';
+import { Body, Controller, Post } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { Request } from 'express';
-import { AuthDto } from './dto'
+import { AuthDto } from './dto';
 
 @Controller('auth')
 export class AuthController {
@@ -9,11 +8,11 @@ export class AuthController {
 
   @Post('signup')
   signup(@Body() dto: AuthDto) {
-    return this.authService.signIn(dto);
+    return this.authService.signUp(dto);
   }
 
   @Post('signin')
-  signin(): string {
-    return this.authService.signUp();
+  signin(@Body() dto: AuthDto) {
+    return this.authService.signIn(dto);
   }
 }

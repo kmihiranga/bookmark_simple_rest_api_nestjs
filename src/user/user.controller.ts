@@ -11,7 +11,4 @@ export class UserController {
     console.log({ email });
     return user;
   }
-
-  @Patch()
-  editUser() {}
 }
